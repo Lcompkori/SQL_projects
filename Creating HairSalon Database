@@ -1,0 +1,143 @@
+/* Creating a fictional database, Hairsalon, using MySQL Workbench.*/
+
+Drop database if EXISTS hairsalon;
+
+Create Database HairSalon;
+
+use HairSalon;
+
+CREATE TABLE employees (emp_id INT PRIMARY KEY AUTO_INCREMENT, first_name VARCHAR(50), last_name VARCHAR(50), phone_number VARCHAR(50), email VARCHAR(50));
+
+CREATE TABLE customers (customer_id INT PRIMARY KEY AUTO_INCREMENT, first_name VARCHAR (50), last_name VARCHAR(50), phone_number VARCHAR(50), email VARCHAR(50));
+
+CREATE TABLE dept_manager (manager_id INT PRIMARY KEY AUTO_INCREMENT, emp_id INT);
+
+CREATE TABLE sales (emp_id INT PRIMARY KEY AUTO_INCREMENT, customer_id INT, service_id INT, product_id INT NULL, item_id INT);
+
+CREATE TABLE services (service_id INT PRIMARY KEY AUTO_INCREMENT, service_name VARCHAR(50), price REAL);
+
+CREATE TABLE products (product_id INT PRIMARY KEY AUTO_INCREMENT, product_name VARCHAR(50), price REAL);
+
+CREATE TABLE supplies (item_id INT PRIMARY KEY AUTO_INCREMENT, item VARCHAR(50), quantity INT, price REAL);
+
+CREATE TABLE mixing_room (item_id INT PRIMARY KEY AUTO_INCREMENT, item VARCHAR(50), quantity INT, price REAL);
+
+/*Inserting clients and employees with fictional information, products by ID, name, price, how many items are in backstock (quantity), and price. (Referenced Kenra Professionals, Wella Professionals and Redken for prices and product names.)*/
+
+/*Inserting values into employees table*/
+INSERT INTO employees VALUES (100, 'Leanne', 'Khouri', 570-555-7212, 'lkhouri19@gmail.com');
+INSERT INTO employees VALUES (101, 'Jane', 'McKain', 319-555-5843, 'jmckain1@gmail.com');
+INSERT INTO employees VALUES (102, 'Carol', 'Perks', 649-555-7615, 'beachesandcream@gmail.com');
+INSERT INTO employees VALUES (103, 'Peter', 'Murphy', 846-555-2164, 'pmurphy@gmail.com');
+
+/*Inserting values into customers table*/
+INSERT INTO customers VALUES (1001, 'Pam', 'Beasley', 570-555-1648, 'pbeasley@dundermifflin.com');
+INSERT INTO customers VALUES (1002, 'Lorelai', 'Gilmore', 910-555-3476, 'squegie_beck@drangonflyinn.com');
+INSERT INTO customers VALUES (1003, 'Dean', 'Winchester', 802-555-7658, 'demon_slayer79@gmail.com');
+INSERT INTO customers VALUES (1004, 'Rory', 'Gilmore', 910-555-1584, 'rgilmore@yale.com');
+INSERT INTO customers VALUES (1005, 'Sam', 'Winchester', 802-555-7911, 's.winchester@gmail.com');
+INSERT INTO customers VALUES (1006, 'Rose', 'Tyler', 436-555-7951, 'timetraveler2003@gmail.com');
+INSERT INTO customers VALUES (1007, 'Michael', 'Scott', 570-555-2494, 'mscott@dundermifflin.com');
+INSERT INTO customers VALUES (1008, 'Jim', 'Halbert', 570-131-9155, 'jhalbert@dundermifflin.com');
+
+/*Inserting values into department manager table*/
+INSERT INTO dept_manager VALUES (200, 100);
+
+/*Inserting values into services table*/
+INSERT INTO services VALUES (5000, 'Facial Wax', 20);
+INSERT INTO services VALUES (5001, 'Haircut', 60);
+INSERT INTO services VALUES (5002, 'Shampoo and Style', 50);
+INSERT INTO services VALUES (5003, 'Single Process', 100);
+INSERT INTO services VALUES (5004, 'Full Highlight', 200);
+INSERT INTO services VALUES (5005, 'Partial Highlight', 150);
+INSERT INTO services VALUES (5006, 'Toner/Gloss', 90);
+INSERT INTO services VALUES (5007, 'Double Process', 300);
+INSERT INTO services VALUES (5008, 'Corrective Color', 400);
+INSERT INTO services VALUES (5009, 'Consultation', 0);
+INSERT INTO services VALUES (5010, 'Updo', 70);
+INSERT INTO services VALUES (5011, 'Extra Product', 20);
+
+/*Inserting values into products table*/
+INSERT INTO products VALUES (3000,'Volumizing Shampoo 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3001,'Volumizing Conditionar 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3003,'Volumizing Shampoo 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3004,'Volumizing Conditionar 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3005,'Color Safe Shampoo 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3006,'Color Safe  Conditionar 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3007,'Color Safe  Shampoo 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3008,'Color Safe  Conditionar 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3009,'Clearifying Shampoo 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3010,'Strengthening Shampoo 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3011,'Strengthening Conditionar 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3012,'Strengthening Shampoo 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3013,'Strengthening Conditionar 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3014,'Texture Shampoo 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3015,'Texture Conditionar 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3016,'Texture Shampoo 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3017,'Texture Beach Conditionar 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3018,'Moisturizing Shampoo 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3019,'Moisturizing Conditionar 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3020,'Moisturizing Shampoo 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3021,'Moisturizing Conditionar 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3022,'Purple Shampoo 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3023,'Purple Conditionar 10.1 fl. Oz', 17.99);
+INSERT INTO products VALUES (3024,'Purple Shampoo 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3025,'Purple Conditionar 33.8 fl. Oz', 35.99);
+INSERT INTO products VALUES (3026,'Gold Shampoo 8.5 fl. Oz', 20.99);
+INSERT INTO products VALUES (3027,'Gold Conditionar 8.5 fl. Oz', 20.99);
+INSERT INTO products VALUES (3028, 'Dry Shampoo', 18.99);
+INSERT INTO products VALUES (3029, 'Volumizing Dry Shampoo 3', 19.99);
+INSERT INTO products VALUES (3030, 'Leave-In Conditionar', 16.99);
+INSERT INTO products VALUES (3031, 'Moisture Hair Oil', 19.99);
+INSERT INTO products VALUES (3032, 'Blow-Dry Spray', 14.99);
+INSERT INTO products VALUES (3033, 'Thickening Moose 12', 23.99);
+INSERT INTO products VALUES (3034, 'Smoothing Blow-Dry Cream 14', 19.99);
+INSERT INTO products VALUES (3035, 'Blow-Dry Cream 5', 18.99);
+INSERT INTO products VALUES (3036, 'Texturizing Cream 13', 23.99);
+INSERT INTO products VALUES (3037, 'Texture Spray 7', 18.99);
+INSERT INTO products VALUES (3038, 'Hair Spray 9', 19.99);
+INSERT INTO products VALUES (3039, 'Hair Spray 14', 25.99);
+INSERT INTO products VALUES (3040, 'Hair Spray 13', 19.99);
+INSERT INTO products VALUES (3041, 'Hairspray 25', 20.99);
+INSERT INTO products VALUES (3042, 'Hair Spray 26', 25.99);
+
+/*Inserting values into supplies table*/
+INSERT INTO supplies VALUES (6001, 'Towels', 50, 87.98);
+INSERT INTO supplies VALUES (6002, 'Capes', 25, 23.69);
+INSERT INTO supplies VALUES (6003, 'Bowls', 20, 1.69);
+INSERT INTO supplies VALUES (6004, 'Brushes', 20, 2.35);
+INSERT INTO supplies VALUES (6005, 'Foils', 4, 16.49);
+INSERT INTO supplies VALUES (6006, 'Combs', 10, 5.11);
+INSERT INTO supplies VALUES (6007,'Rat-tail Combs', 5, 10);
+INSERT INTO supplies VALUES (6008, 'Clips', 4, 3.39);
+INSERT INTO supplies VALUES (6009,'Whisks', 6, 2.59);
+INSERT INTO supplies VALUES (6010,'Scale', 4, 41.19);
+INSERT INTO supplies VALUES (6011,'Plastic Film', 2, 22.50);
+INSERT INTO supplies VALUES (6012,'Gloves', 4, 16.49);
+INSERT INTO supplies VALUES (6013,'Volumizing Shampoo 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6014,'Volumizing Conditionar 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6015,'Color Safe  Shampoo 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6016,'Color Safe  Conditionar 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6017,'Clearifying Shampoo 10.1 fl. Oz', 4, 17.99);
+INSERT INTO supplies VALUES (6018,'Strengthening Shampoo 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6019,'Strengthening Conditionar 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6020,'Moisturizing Shampoo 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6021,'Moisturizing Conditionar 33.8 fl. Oz', 4, 35.99);
+INSERT INTO supplies VALUES (6022,'Detergent', 1, 15.99);
+INSERT INTO supplies VALUES (6023,'Toilet Paper', 1, 22.96);
+INSERT INTO supplies VALUES (6024,'Paper Towels', 1, 13.18);
+
+/*Inserting values into mixing_room table*/
+INSERT INTO mixing_room VALUES (7000, 'Lightener', 4, 37.75);
+INSERT INTO mixing_room VALUES (7001, 'Clay Lightener', 4, 44.25);
+INSERT INTO mixing_room VALUES (7002,'Demi Developer', 4, 7.93);
+INSERT INTO mixing_room VALUES (7003,'Developer 10 vol', 4, 7.75);
+INSERT INTO mixing_room VALUES (7004, 'Developer 20 vol', 6, 7.75);
+INSERT INTO mixing_room VALUES (7005, 'Developer 30 vol', 5, 7.75);
+INSERT INTO mixing_room VALUES (7006, 'Developer 40 vol', 5, 7.75);
+INSERT INTO mixing_room VALUES (7007, 'Developer 6 vol', 2, 7.95);
+
+
+
+
+
