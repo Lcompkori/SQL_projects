@@ -25,10 +25,10 @@ CREATE TABLE mixing_room (item_id INT PRIMARY KEY AUTO_INCREMENT, item VARCHAR(5
 /*Inserting clients and employees with fictional information, products by ID, name, price, how many items are in backstock (quantity), and price. (Referenced Kenra Professionals, Wella Professionals and Redken for prices and product names.)*/
 
 /*Inserting values into employees table*/
-INSERT INTO employees VALUES (100, 'Leanne', 'Khouri', 570-555-7212, 'lkhouri19@gmail.com');
-INSERT INTO employees VALUES (101, 'Jane', 'McKain', 319-555-5843, 'jmckain1@gmail.com');
-INSERT INTO employees VALUES (102, 'Carol', 'Perks', 649-555-7615, 'beachesandcream@gmail.com');
-INSERT INTO employees VALUES (103, 'Peter', 'Murphy', 846-555-2164, 'pmurphy@gmail.com');
+INSERT INTO employees VALUES (100, 'Leanne', 'Khouri', 5705557212, 'lkhouri19@gmail.com');
+INSERT INTO employees VALUES (101, 'Jane', 'McKain', 3195555843, 'jmckain1@gmail.com');
+INSERT INTO employees VALUES (102, 'Carol', 'Perks', 6495557615, 'beachesandcream@gmail.com');
+INSERT INTO employees VALUES (103, 'Peter', 'Murphy', 8465552164, 'pmurphy@gmail.com');
 
 /*Inserting values into customers table*/
 INSERT INTO customers VALUES (1001, 'Pam', 'Beasley', 570-555-1648, 'pbeasley@dundermifflin.com');
